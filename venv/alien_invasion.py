@@ -5,6 +5,7 @@ from settings import Settings
 from space_ship import Ship
 import  game_functions as gf
 
+
 def run_game():
     #initialize game and create screen object
     pygame.init()
@@ -21,9 +22,10 @@ def run_game():
     while True:
 
         #watch for keyboard and mouse events
-        gf.check_events(space_ship)
+        gf.check_events(space_ship,game_settings,screen,bullets)
         space_ship.update()
-        bullets.update()
+        if len(bullets)>=1:
+            bullets.update()
         gf.update_screen(game_settings,screen,space_ship,bullets)
 
 
