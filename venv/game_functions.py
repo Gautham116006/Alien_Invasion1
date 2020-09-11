@@ -111,6 +111,27 @@ def get_number_of_rows(game_settings,alien_height,ship_height):
     return num_rows
 
 
+def check_fleet_edges(game_settings,aliens):
+    for alien in aliens.sprites():
+        if alien.check_fleet_edges():
+            change_fleet_direction(game_settings,aliens)
+            break
+
+
+def change_fleet_direction(game_settings,aliens):
+    #drop the enire fleet and change its direction
+    for alien in aliens.sprites():
+        alien.rect.y += game_settings.fleet_drop_speed
+    game_settings.fleet_direction *= -1
+
+
+def update_aliens(game_settings,aliens):
+    # update the position of each alien to the right
+    check_fleet_edges(game_settings,aliens)
+    aliens.update()
+
+
+
 
 
 
