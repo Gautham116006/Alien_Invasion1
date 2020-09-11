@@ -3,8 +3,6 @@ from  pygame.sprite import Sprite
 from settings import Settings
 
 
-
-
 class Bullet(Sprite):
     def __init__(self,game_settings,space_ship,screen):
         super(Bullet,self).__init__()
