@@ -9,10 +9,7 @@ class Alien(Sprite):
         self.screen = screen
         self.image = pygame.image.load("Include\images\ship2.jpeg")
         self.rect = self.image.get_rect()
-        self.rect.top = 0
 
-        #store aliens exact position
-        self.top = float(self.rect.top)
 
 
     def blitme(self):

@@ -17,8 +17,8 @@ def run_game():
     #make a group to store bullets and aliens
     bullets = Group()
     aliens =Group()
-    gf.create_fleet(game_settings,screen,aliens)
-    print(len(aliens))
+    gf.create_fleet(game_settings,screen,space_ship,aliens)
+
 
 
 
@@ -31,7 +31,6 @@ def run_game():
         space_ship.update()
         if len(bullets)>=1:
             bullets.update()
-
         gf.update_screen(game_settings, screen, space_ship, bullets,aliens)
 
 
